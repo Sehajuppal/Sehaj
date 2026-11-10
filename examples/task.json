@@ -1,0 +1,25 @@
+{
+  "schema_version": "1.0",
+  "id": "example-worker-001",
+  "parent_id": null,
+  "goal": "Write marker.txt with the word marked. Do not self-certify.",
+  "role": "worker",
+  "routing": { "account_profile": "research-sandbox-a" },
+  "acceptance_tests": [
+    {
+      "id": "marker-content",
+      "description": "Service reads marker.txt itself.",
+      "argv": ["node", "-e", "process.exit(0)"],
+      "required": true
+    }
+  ],
+  "budget": {
+    "tokens": null,
+    "usd": null,
+    "wall_time_sec": 30,
+    "max_concurrent_workers": 1,
+    "max_tasks": 4
+  },
+  "permissions": ["read", "edit"],
+  "depth_remaining": 0
+}

@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://orchestra.local/contracts/result-contract.schema.json",
+  "title": "Active result submission",
+  "description": "A worker or caller may submit a partial report. status completed and verification.accepted true are rejected. The service does not treat this document as verification.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "id", "parent_id", "status", "summary", "verification"],
+  "properties": {
+    "schema_version": { "const": "1.0" },
+    "id": { "type": "string", "minLength": 1, "maxLength": 128 },
+    "parent_id": { "type": ["string", "null"] },
+    "status": { "enum": ["partial", "blocked", "failed", "cancelled"] },
+    "summary": { "type": "string", "maxLength": 1000 },
+    "changed_files": {
+      "type": "array",
+      "maxItems": 50,
+      "items": { "type": "string", "minLength": 1, "maxLength": 300 }
+    },
+    "verification": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["accepted"],
+      "properties": {
+        "accepted": { "const": false }
+      }
+    }
+  }
+}

@@ -1,0 +1,196 @@
+TAP version 13
+# Subtest: MCP initialize, tools/list, delegate, status, wait, message, and cancel
+ok 1 - MCP initialize, tools/list, delegate, status, wait, message, and cancel
+  ---
+  duration_ms: 350.683787
+  type: 'test'
+  ...
+# Subtest: supervisor DAG shares one pool and distinguishes verified from unverified
+ok 2 - supervisor DAG shares one pool and distinguishes verified from unverified
+  ---
+  duration_ms: 1039.159914
+  type: 'test'
+  ...
+# Subtest: provider concurrency slot is one ancestor pool, not one allowance per child
+ok 3 - provider concurrency slot is one ancestor pool, not one allowance per child
+  ---
+  duration_ms: 273.074402
+  type: 'test'
+  ...
+# Subtest: cancel kills the gemini process tree and restart does not resurrect success
+ok 4 - cancel kills the gemini process tree and restart does not resurrect success
+  ---
+  duration_ms: 714.856192
+  type: 'test'
+  ...
+# Subtest: abrupt SIGKILL keeps ownership and idempotency without a second spawn
+ok 5 - abrupt SIGKILL keeps ownership and idempotency without a second spawn
+  ---
+  duration_ms: 676.507531
+  type: 'test'
+  ...
+# Subtest: fake gemini executable is parsed and resume is pinned to its session id
+ok 6 - fake gemini executable is parsed and resume is pinned to its session id
+  ---
+  duration_ms: 640.299454
+  type: 'test'
+  ...
+# Subtest: CLI and MCP reject invalid contracts and accept a mapped valid task
+ok 7 - CLI and MCP reject invalid contracts and accept a mapped valid task
+  ---
+  duration_ms: 1214.34534
+  type: 'test'
+  ...
+# Subtest: skill export is a physical copy under the staging root only
+ok 8 - skill export is a physical copy under the staging root only
+  ---
+  duration_ms: 612.229041
+  type: 'test'
+  ...
+# Subtest: launch plans keep Gemini CLI and Antigravity apart and omit API keys
+ok 9 - launch plans keep Gemini CLI and Antigravity apart and omit API keys
+  ---
+  duration_ms: 1.355414
+  type: 'test'
+  ...
+# Subtest: two Gemini CLI profiles run concurrently with pinned sessions and no crossover
+ok 10 - two Gemini CLI profiles run concurrently with pinned sessions and no crossover
+  ---
+  duration_ms: 230.615616
+  type: 'test'
+  ...
+# Subtest: missing config and symlink escape fail closed
+ok 11 - missing config and symlink escape fail closed
+  ---
+  duration_ms: 2.658086
+  type: 'test'
+  ...
+# Subtest: secret stderr is redacted and API auth stays optional
+ok 12 - secret stderr is redacted and API auth stays optional
+  ---
+  duration_ms: 138.04845
+  type: 'test'
+  ...
+# Subtest: doctor and list output do not claim live Google auth or print secrets
+ok 13 - doctor and list output do not claim live Google auth or print secrets
+  ---
+  duration_ms: 89.465422
+  type: 'test'
+  ...
+# Subtest: MCP delegate and status share the scheduler state
+ok 14 - MCP delegate and status share the scheduler state
+  ---
+  duration_ms: 215.902188
+  type: 'test'
+  ...
+# Subtest: codex overhead is measured on skill, schema, calls, and results
+ok 15 - codex overhead is measured on skill, schema, calls, and results
+  ---
+  duration_ms: 1.321773
+  type: 'test'
+  ...
+# Subtest: vendored staging skill stays out of live profiles and names the bound catalog
+ok 16 - vendored staging skill stays out of live profiles and names the bound catalog
+  ---
+  duration_ms: 0.292533
+  type: 'test'
+  ...
+# Subtest: handoff cards match the vendored schema
+ok 17 - handoff cards match the vendored schema
+  ---
+  duration_ms: 50.709557
+  type: 'test'
+  ...
+# Subtest: fault script measures verified completions against a disabled baseline
+ok 18 - fault script measures verified completions against a disabled baseline
+  ---
+  duration_ms: 7285.343879
+  type: 'test'
+  ...
+# Subtest: pacing queues through cooldown and does not rotate to an idle account
+ok 19 - pacing queues through cooldown and does not rotate to an idle account
+  ---
+  duration_ms: 9.923907
+  type: 'test'
+  ...
+# Subtest: compact MCP is smaller and run falls back to a task id
+ok 20 - compact MCP is smaller and run falls back to a task id
+  ---
+  duration_ms: 1210.329143
+  type: 'test'
+  ...
+# Subtest: pacing rests an account and does not evade a restriction
+ok 21 - pacing rests an account and does not evade a restriction
+  ---
+  duration_ms: 984.182633
+  type: 'test'
+  ...
+# Subtest: handoff card, webhook, and ACP skeleton do not claim Muse
+ok 22 - handoff card, webhook, and ACP skeleton do not claim Muse
+  ---
+  duration_ms: 676.775291
+  type: 'test'
+  ...
+# Subtest: state commit crash leaves a readable file and one later task
+ok 23 - state commit crash leaves a readable file and one later task
+  ---
+  duration_ms: 325.125031
+  type: 'test'
+  ...
+# Subtest: reliability bench reports a measured ratio without inventing 2x
+ok 24 - reliability bench reports a measured ratio without inventing 2x
+  ---
+  duration_ms: 2912.932101
+  type: 'test'
+  ...
+# Subtest: one scheduler enforces a provider-wide concurrency ceiling
+ok 25 - one scheduler enforces a provider-wide concurrency ceiling
+  ---
+  duration_ms: 370.177902
+  type: 'test'
+  ...
+# Subtest: cancel rejects a late success and can time out while a child ignores SIGTERM
+ok 26 - cancel rejects a late success and can time out while a child ignores SIGTERM
+  ---
+  duration_ms: 5413.264076
+  type: 'test'
+  ...
+# Subtest: generic 403 does not open the provider circuit; explicit events do
+ok 27 - generic 403 does not open the provider circuit; explicit events do
+  ---
+  duration_ms: 188.395162
+  type: 'test'
+  ...
+# Subtest: personal identities and API fallback are refused for experiments
+ok 28 - personal identities and API fallback are refused for experiments
+  ---
+  duration_ms: 47.102278
+  type: 'test'
+  ...
+# Subtest: restart adopts the same worker and does not spawn another
+ok 29 - restart adopts the same worker and does not spawn another
+  ---
+  duration_ms: 540.160328
+  type: 'test'
+  ...
+# Subtest: retry-after cooldown is visible to a restarted scheduler
+ok 30 - retry-after cooldown is visible to a restarted scheduler
+  ---
+  duration_ms: 48.29899
+  type: 'test'
+  ...
+# Subtest: benchmark labels stay short of a 5x or learned-routing claim
+ok 31 - benchmark labels stay short of a 5x or learned-routing claim
+  ---
+  duration_ms: 495.107478
+  type: 'test'
+  ...
+1..31
+# tests 31
+# suites 0
+# pass 31
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 28777.164411

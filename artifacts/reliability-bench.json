@@ -1,0 +1,19 @@
+{
+  "baseline": {
+    "verified": 1,
+    "submitted": 5,
+    "lost": 4,
+    "duplicated": 0,
+    "meanRecoveryMs": null
+  },
+  "pooled": {
+    "verified": 5,
+    "submitted": 5,
+    "lost": 0,
+    "duplicated": 0,
+    "meanRecoveryMs": 414
+  },
+  "verifiedRatio": 5,
+  "claim2x": true,
+  "note": "Fake Gemini faults only. Not a live provider measurement. Same-account retries only."
+}

@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://local.orchestrator/handoff-card.v1.json",
+  "title": "Handoff card v1",
+  "description": "Compact, agent-agnostic brief for Muse or any generic worker. Keep it small; point at files instead of pasting transcripts.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "task_id", "goal", "constraints", "done_check"],
+  "properties": {
+    "schema": { "const": "handoff-card.v1" },
+    "task_id": { "type": "string", "minLength": 1 },
+    "goal": { "type": "string", "minLength": 1, "description": "The outcome to produce, in one short paragraph." },
+    "constraints": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "type": "string", "minLength": 1 },
+      "description": "Hard limits: paths, permissions, budget, deadline, account pinning, forbidden side effects."
+    },
+    "done_check": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "must_pass"],
+        "properties": {
+          "id": { "type": "string", "minLength": 1 },
+          "must_pass": { "type": "boolean" },
+          "command": { "type": "string", "description": "Optional command that must exit 0 on the integrated revision." },
+          "evidence": { "type": "string", "description": "What a reviewer should see if there is no single command." }
+        },
+        "anyOf": [
+          { "required": ["command"] },
+          { "required": ["evidence"] }
+        ]
+      }
+    },
+    "inputs": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Optional paths the worker may read, relative to the worktree."
+    },
+    "result_path": {
+      "type": "string",
+      "description": "Where the worker should write the compact result envelope."
+    }
+  }
+}

@@ -1,0 +1,210 @@
+{
+  "script": "offline-fault-script-v1",
+  "deterministic": true,
+  "metric": "independently_verified_completions / launched_root_tasks",
+  "baseline": {
+    "verified": 3,
+    "launched": 14,
+    "rate": 0.214,
+    "rows": [
+      {
+        "id": "worker_crash_mid_task",
+        "launched": 1,
+        "verified": 0,
+        "profile": "gemini-a",
+        "state": "needs_reconcile"
+      },
+      {
+        "id": "scheduler_kill_after_enqueue",
+        "launched": 1,
+        "verified": 0,
+        "profile": "gemini-a",
+        "state": "queued"
+      },
+      {
+        "id": "scheduler_kill_after_spawn",
+        "launched": 1,
+        "verified": 0,
+        "profile": "gemini-a",
+        "state": "needs_reconcile"
+      },
+      {
+        "id": "cancel_during_queue",
+        "launched": 1,
+        "verified": 0,
+        "profile": "gemini-a",
+        "state": "queued"
+      },
+      {
+        "id": "cancel_during_run",
+        "launched": 1,
+        "verified": 0,
+        "profile": "gemini-a",
+        "state": "running"
+      },
+      {
+        "id": "cancel_during_backoff",
+        "launched": 1,
+        "verified": 0,
+        "profile": "gemini-a",
+        "state": "needs_reconcile"
+      },
+      {
+        "id": "late_success_after_cancel",
+        "launched": 1,
+        "verified": 0,
+        "profile": "gemini-a",
+        "state": "running"
+      },
+      {
+        "id": "retry_after",
+        "launched": 1,
+        "verified": 0,
+        "profile": "gemini-a",
+        "state": "needs_reconcile"
+      },
+      {
+        "id": "expired_auth",
+        "launched": 1,
+        "verified": 0,
+        "profile": "gemini-a",
+        "state": "queued"
+      },
+      {
+        "id": "child_ignores_sigterm",
+        "launched": 1,
+        "verified": 0,
+        "profile": "gemini-b",
+        "state": "running"
+      },
+      {
+        "id": "duplicate_delegate",
+        "launched": 2,
+        "verified": 2,
+        "profile": "gemini-b,gemini-b",
+        "state": "verified,verified"
+      },
+      {
+        "id": "stale_evidence_after_edit",
+        "launched": 1,
+        "verified": 0,
+        "profile": "gemini-a",
+        "state": "needs_reconcile"
+      },
+      {
+        "id": "generic_403_not_rotation",
+        "launched": 1,
+        "verified": 1,
+        "profile": "gemini-b",
+        "state": "verified"
+      }
+    ],
+    "recoveryEnabled": false,
+    "cancellationEnabled": false,
+    "idempotencyEnabled": false
+  },
+  "recovery": {
+    "verified": 6,
+    "launched": 13,
+    "rate": 0.462,
+    "rows": [
+      {
+        "id": "worker_crash_mid_task",
+        "launched": 1,
+        "verified": 1,
+        "profile": "gemini-a",
+        "state": "verified"
+      },
+      {
+        "id": "scheduler_kill_after_enqueue",
+        "launched": 1,
+        "verified": 1,
+        "profile": "gemini-a",
+        "state": "verified"
+      },
+      {
+        "id": "scheduler_kill_after_spawn",
+        "launched": 1,
+        "verified": 1,
+        "profile": "gemini-a",
+        "state": "verified"
+      },
+      {
+        "id": "cancel_during_queue",
+        "launched": 1,
+        "verified": 0,
+        "profile": "gemini-a",
+        "state": "cancelled"
+      },
+      {
+        "id": "cancel_during_run",
+        "launched": 1,
+        "verified": 0,
+        "profile": "gemini-a",
+        "state": "cancelled"
+      },
+      {
+        "id": "cancel_during_backoff",
+        "launched": 1,
+        "verified": 0,
+        "profile": "gemini-a",
+        "state": "cancelled"
+      },
+      {
+        "id": "late_success_after_cancel",
+        "launched": 1,
+        "verified": 0,
+        "profile": "gemini-a",
+        "state": "cancelling"
+      },
+      {
+        "id": "retry_after",
+        "launched": 1,
+        "verified": 1,
+        "profile": "gemini-a",
+        "state": "verified"
+      },
+      {
+        "id": "expired_auth",
+        "launched": 1,
+        "verified": 0,
+        "profile": "gemini-a",
+        "state": "queued"
+      },
+      {
+        "id": "child_ignores_sigterm",
+        "launched": 1,
+        "verified": 0,
+        "profile": "gemini-b",
+        "state": "cancelled"
+      },
+      {
+        "id": "duplicate_delegate",
+        "launched": 1,
+        "verified": 1,
+        "profile": "gemini-b",
+        "state": "verified"
+      },
+      {
+        "id": "stale_evidence_after_edit",
+        "launched": 1,
+        "verified": 0,
+        "profile": "gemini-a",
+        "state": "completed_unverified"
+      },
+      {
+        "id": "generic_403_not_rotation",
+        "launched": 1,
+        "verified": 1,
+        "profile": "gemini-b",
+        "state": "verified"
+      }
+    ],
+    "earlyRetryBlocked": true,
+    "sigtermIgnoredThenStopped": true,
+    "restrictedDidNotRotate": true
+  },
+  "verifiedRatio": 2.15,
+  "claim2x": true,
+  "skipped": []
+}

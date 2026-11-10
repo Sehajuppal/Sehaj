@@ -1,0 +1,31 @@
+{
+  "liveGoogleAuthVerified": false,
+  "paidApiUsed": false,
+  "agent": "gemini-cli",
+  "sessionA": "0ffb864f-6264-4769-a389-2f29289318f6",
+  "sessionB": "c9894604-da06-4d33-97e8-4eeac7a634d3",
+  "resumeA": "0ffb864f-6264-4769-a389-2f29289318f6",
+  "distinctSessions": true,
+  "boundaryA": {
+    "profileId": "prf_f1e49feb-b573-476f-a1d9-bd54c6dde640",
+    "home": "/tmp/orch-QSx8KJ/profiles/prf_f1e49feb-b573-476f-a1d9-bd54c6dde640/home",
+    "geminiCliHome": "/tmp/orch-QSx8KJ/profiles/prf_f1e49feb-b573-476f-a1d9-bd54c6dde640/home",
+    "hasOwnCredential": true,
+    "hasOther": false,
+    "hasApiKey": false,
+    "hasAdc": false,
+    "hasCanary": false,
+    "sessionId": "0ffb864f-6264-4769-a389-2f29289318f6"
+  },
+  "boundaryB": {
+    "profileId": "prf_515e7c98-2cac-4334-b532-a0b3fb0d9e69",
+    "home": "/tmp/orch-QSx8KJ/profiles/prf_515e7c98-2cac-4334-b532-a0b3fb0d9e69/home",
+    "geminiCliHome": "/tmp/orch-QSx8KJ/profiles/prf_515e7c98-2cac-4334-b532-a0b3fb0d9e69/home",
+    "hasOwnCredential": true,
+    "hasOther": false,
+    "hasApiKey": false,
+    "hasAdc": false,
+    "hasCanary": false,
+    "sessionId": "c9894604-da06-4d33-97e8-4eeac7a634d3"
+  }
+}

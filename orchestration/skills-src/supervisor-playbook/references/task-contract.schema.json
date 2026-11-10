@@ -1,0 +1,65 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://orchestra.local/contracts/task-contract.schema.json",
+  "title": "Active task contract",
+  "description": "Reconciled to what this service enforces. tokens and usd must be null because those caps are not enforceable here. wall_time_sec, max_concurrent_workers, and max_tasks are the hard ceilings. Acceptance argv is run by the service with shell disabled. This schema is the runtime boundary, not a proposal.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "id", "parent_id", "goal", "role", "routing", "acceptance_tests", "budget", "permissions", "depth_remaining"],
+  "properties": {
+    "schema_version": { "const": "1.0" },
+    "id": { "type": "string", "minLength": 1, "maxLength": 128 },
+    "parent_id": { "type": "null" },
+    "goal": { "type": "string", "minLength": 1, "maxLength": 2000 },
+    "role": { "const": "worker" },
+    "routing": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["account_profile"],
+      "properties": {
+        "account_profile": { "type": "string", "minLength": 1, "maxLength": 128 }
+      }
+    },
+    "acceptance_tests": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 20,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "description", "argv", "required"],
+        "properties": {
+          "id": { "type": "string", "minLength": 1, "maxLength": 128 },
+          "description": { "type": "string", "minLength": 1, "maxLength": 500 },
+          "argv": {
+            "type": "array",
+            "minItems": 1,
+            "maxItems": 16,
+            "items": { "type": "string", "minLength": 1, "maxLength": 500 }
+          },
+          "required": { "const": true }
+        }
+      }
+    },
+    "budget": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["tokens", "usd", "wall_time_sec", "max_concurrent_workers", "max_tasks"],
+      "properties": {
+        "tokens": { "type": "null", "description": "Unavailable. A number is rejected rather than treated as zero or as an enforced cap." },
+        "usd": { "type": "null", "description": "Advisory only if it were known. This build rejects non-null because it cannot enforce spend." },
+        "wall_time_sec": { "type": "integer", "minimum": 1, "maximum": 86400 },
+        "max_concurrent_workers": { "type": "integer", "minimum": 1, "maximum": 32 },
+        "max_tasks": { "type": "integer", "minimum": 1, "maximum": 32 }
+      }
+    },
+    "permissions": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 4,
+      "uniqueItems": true,
+      "items": { "enum": ["read", "edit"] }
+    },
+    "depth_remaining": { "const": 0 }
+  }
+}
