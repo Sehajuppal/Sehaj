@@ -1,0 +1,36 @@
+# EXAMPLE ONLY — not installed, no server exists at these placeholder paths.
+# Codex native configuration fields verified at https://developers.openai.com/codex/mcp
+# Place selected block in $CODEX_HOME/config.toml (normally ~/.codex/config.toml).
+# Choose ONE transport; replace placeholders and set enabled=true after review.
+# Proposed service tool names below must match actual tools/list catalog.
+
+[mcp_servers.orchestrator]
+command = "/absolute/path/to/your-stdio-server"
+args = [] # supply only the real server's documented arguments
+cwd = "/absolute/path/to/service"
+env = {} # nonsecret configuration only
+# Optional names of variables injected securely into the parent environment:
+env_vars = []
+startup_timeout_sec = 20
+tool_timeout_sec = 60 # delegate/status must finish promptly; jobs run asynchronously
+# Deny list, if populated, is applied AFTER allow list.
+enabled_tools = ["delegate", "status", "steer", "resume", "cancel"]
+disabled_tools = []
+enabled = false
+
+# ALTERNATIVE Streamable HTTP block — disabled example local endpoint, not a source URL.
+# Remove stdio block and rename this alias to orchestrator if selecting HTTP.
+[mcp_servers.orchestrator_http_example]
+url = "http://127.0.0.1:7310/mcp"
+# Environment variable NAME, not literal token. Provision only if server supports bearer auth.
+bearer_token_env_var = "ORCHESTRATOR_MCP_TOKEN"
+# Nonsecret header example; env_http_headers can map header names to env variable names.
+http_headers = { "X-Client" = "codex" }
+startup_timeout_sec = 20
+tool_timeout_sec = 60
+enabled_tools = ["delegate", "status", "steer", "resume", "cancel"]
+disabled_tools = []
+enabled = false
+
+# Do not use blanket approval bypass to improve routing. Preserve parent policy.
+# CODEX_HOME is an environment variable, not an invented key in this MCP block.

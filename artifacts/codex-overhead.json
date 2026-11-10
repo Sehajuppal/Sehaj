@@ -1,0 +1,46 @@
+{
+  "tokenizer": "unavailable",
+  "unit": "utf8_bytes",
+  "tokenEstimate": "ceil(bytes/4)",
+  "alone": {
+    "label": "codex_alone",
+    "skillBytes": 0,
+    "instructionBytes": 0,
+    "schemaBytes": 0,
+    "callBytes": 0,
+    "resultBytes": 0,
+    "roundTrips": 0,
+    "largeOutputInlined": false,
+    "estimatedTokens": 0
+  },
+  "verbose": {
+    "label": "verbose_inline",
+    "skillBytes": 4485,
+    "instructionBytes": 200,
+    "schemaBytes": 2388,
+    "callBytes": 260,
+    "resultBytes": 24078,
+    "roundTrips": 3,
+    "largeOutputInlined": true,
+    "estimatedTokens": 7853
+  },
+  "compact": {
+    "label": "compact_delegate_and_wait",
+    "skillBytes": 806,
+    "instructionBytes": 191,
+    "schemaBytes": 1070,
+    "callBytes": 91,
+    "resultBytes": 81,
+    "roundTrips": 1,
+    "largeOutputInlined": false,
+    "estimatedTokens": 560
+  },
+  "schemaByteRatioVerboseToCompact": 2.23,
+  "resultByteRatioVerboseToCompact": 297.26,
+  "roundTripRatioVerboseToCompact": 3,
+  "compactFewerSchemaBytes": true,
+  "compactFewerResultBytes": true,
+  "compactFewerRoundTrips": true,
+  "largeOutputsReferencedByPath": true,
+  "productClaim5x": false
+}

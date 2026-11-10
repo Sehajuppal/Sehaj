@@ -1,0 +1,16 @@
+{
+  "full": {
+    "listBytes": 2398,
+    "roundBytes": 791,
+    "listTokens": 600,
+    "roundTokens": 198
+  },
+  "compact": {
+    "listBytes": 1080,
+    "roundBytes": 277,
+    "listTokens": 270,
+    "roundTokens": 70
+  },
+  "listByteRatio": 2.22,
+  "snippetLines": 12
+}

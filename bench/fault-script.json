@@ -1,0 +1,19 @@
+{
+  "name": "offline-fault-script-v1",
+  "deterministic": true,
+  "cases": [
+    "worker_crash_mid_task",
+    "scheduler_kill_after_enqueue",
+    "scheduler_kill_after_spawn",
+    "cancel_during_queue",
+    "cancel_during_run",
+    "cancel_during_backoff",
+    "late_success_after_cancel",
+    "retry_after",
+    "expired_auth",
+    "child_ignores_sigterm",
+    "duplicate_delegate",
+    "stale_evidence_after_edit",
+    "generic_403_not_rotation"
+  ]
+}

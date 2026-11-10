@@ -1,0 +1,20 @@
+schema: handoff-card.v1
+task_id: "example-001"
+goal: |
+  Implement the requested change in the assigned worktree and leave passing done-checks on the integrated revision.
+constraints:
+  - Stay inside the listed input paths and the assigned worktree
+  - Use only the authorized account or profile; do not switch identities
+  - No external send, publish, purchase, or destructive shared change
+  - Honor the parent budget and deadline; do not start further orchestrators
+done_check:
+  - id: tests
+    must_pass: true
+    command: "npm test"
+  - id: in-scope
+    must_pass: true
+    evidence: "Reviewed diff stays in scope and required tests passed on the integrated revision"
+inputs:
+  - "src/"
+  - "tests/"
+result_path: "artifacts/example-001/result.json"

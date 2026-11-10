@@ -1,0 +1,9 @@
+{
+  "schema_version": "1.0",
+  "id": "example-worker-001",
+  "parent_id": null,
+  "status": "partial",
+  "summary": "Synthetic submission. This is not verification.",
+  "changed_files": ["marker.txt"],
+  "verification": { "accepted": false }
+}
